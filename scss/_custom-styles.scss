@@ -4,7 +4,6 @@
    $blackColor: #221F1F;
    $whiteColor: #FFF;
    $grayColor: #F2F2F2;
-   $tanColor: #EBE2D9;
    $blueColor: #2BA6CB;
    $redColor: #D83323;
    $goldColor: #D89823;
@@ -22,7 +21,7 @@
    }
 
    ::selection {
-    background: $goldColor;
+    background: #FF0;
    }
 
    body {
@@ -321,20 +320,6 @@
     text-transform: uppercase;
    }
 
-   #schedule ul, #speakers ul {
-    max-width: 800px;
-    margin-left: 8%;
-    margin-right: 8%;
-   }
-
-   #schedule ul li, #speakers ul li {
-    /*font-size: 1.3em;*/
-    text-align: left;
-    /*margin: 0 8%;*/
-    /*background-color: green;*/
-    /*display: block;*/
-   }
-
    .panel {
     text-align: center;
     background-color: $grayColor;
@@ -389,6 +374,57 @@
     margin : 0;
    }
 
+   .time-slot {
+    padding: 40px 0;
+    margin: 10px 0;
+    text-align: center;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: $grayColor;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: $grayColor;
+   }
+
+   .session-block .panel {
+    text-align: left;
+    margin: 0;
+   }
+
+   .talk-title {
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
+    font-weight: bold;
+    line-height: 1.4em;
+    margin-bottom: 5px;
+   }
+
+   .talk-speaker {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 0.8em;
+    text-transform: uppercase;
+   }
+
+   .track-type {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8em;
+    text-transform: uppercase;
+   }
+
+   .mobile-track, .mobile-track:hover {
+    color: $redColor;
+   }
+
+   .server-track, .server-track:hover {
+    color: $goldColor;
+   }
+
+   .web-track, .web-track:hover {
+    color: $blueColor;
+   }
+
    /*** START MASONRY ***/
    #speaker-list {
     float: none;
@@ -435,13 +471,12 @@
 
    .speaker-twitter {
     margin-top: 0.25em;
-    margin-bottom: 1.5em;
    }
 
    .speaker-image {
     width: 100%;
     border-style: solid;
-    border-width: 0.65em;
+    border-width: 0.5em;
     border-color: $whiteColor;
     border-radius: 50%;
     /*-webkit-filter: grayscale(100%);
@@ -499,6 +534,69 @@
 
   /*** END MASONRY ***/
 
+  #speaker-bio {
+    /*background-color: black;*/
+  }
+
+  .speaker-bio-image {
+    display: block;
+    border-radius: 50%;
+    margin: 0 auto 2em;
+  }
+
+  .speaker-bio-name {
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0.25em;
+  }
+
+  .speaker-bio-twitter {
+    display: block;
+    font-size: 1.4em;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  .speaker-bio-desc {
+    display: block;
+    line-height: 1.5em;
+    /*text-align: center;*/
+  }
+
+  .speaker-bio-session-heading {
+    display: block;
+    /*font-family: 'Open Sans', sans-serif;*/
+    /*font-weight: bold;*/
+    text-transform: uppercase;
+    /*text-align: center;*/
+    margin-top: 1em;
+  }
+
+  .speaker-session-list li {
+    list-style-type: none;
+    margin-top: 1em;
+  }
+
+  .speaker-session-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+  }
+
+  .speaker-session-time {
+    display: block;
+    font-family: 'Gentium Book Basic', serif;
+    font-weight: normal;
+  }
+
+  .speaker-session-desc {
+    display: block;
+    margin-top: 1em;
+  }
+
 /* ==========================================================================
    Media Queries for Responsive Design
    ========================================================================== */
@@ -536,13 +634,24 @@
       .speaker-box {
         margin: 8px;
       }
+   }
 
-      #schedule ul, #speakers ul {
-        margin-left: 4%;
-        margin-right: 4%;
+   @media only screen and (min-width: 900px) {
+
+    .speaker-bio-image {
+        float: left;
+        max-width: 25%;
+        margin: 0;
+        visibility: visible;
       }
 
-      #schedule ul li, #speakers ul li {
-        font-size: 1.3em;
+      .speaker-bio-wrapper {
+        float : left;
+        max-width: 70%;
+        margin-left: 5%;
       }
+
+      .speaker-bio-name, .speaker-bio-twitter {
+        text-align: left;
+      } 
    }
